@@ -1,7 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { PeraWalletConnect } from "@perawallet/connect";
 
 function App() {
+  //1. connect dengan algo wallet utk dapatkan acc 
+  const connectPeraAlgoWallet = async () => {
+    let account = "";
+    const peraConnect = new PeraWalletConnect({
+      shouldShowSignTxnToast: false
+    });
+    await peraConnect.connect()
+      .then((value) => {
+        console.log('Connected with Pera Wallet. Account address:', value);
+      })
+      .catch((err) => {
+        console.error('Error connecting with Pera Wallet:', err);
+      });
+    return account;
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -9,6 +25,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <button onClick={connectPeraAlgoWallet}>Connect to Pera Algo Wallet</button>
         <a
           className="App-link"
           href="https://reactjs.org"
