@@ -1,9 +1,10 @@
 import logo from './logo.svg';
-import './App.css';
 import { PeraWalletConnect } from "@perawallet/connect";
-
+import { useState} from 'react';
+import MyRouter from './router';
 function App() {
-  //1. connect dengan algo wallet utk dapatkan acc 
+  const [account, setAccount] = useState(null);
+  //connect dengan algo wallet utk dapatkan account user 
   const connectPeraAlgoWallet = async () => {
     let account = "";
     const peraConnect = new PeraWalletConnect({
@@ -12,6 +13,7 @@ function App() {
     await peraConnect.connect()
       .then((value) => {
         console.log('Connected with Pera Wallet. Account address:', value);
+        setAccount(value);
       })
       .catch((err) => {
         console.error('Error connecting with Pera Wallet:', err);
@@ -20,7 +22,7 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="App-header">
+      {(account!=null)?<MyRouter/>:<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -34,8 +36,9 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header>}
     </div>
+  
   );
 }
 
