@@ -31,7 +31,7 @@ const Display = () => {
     <div>
       <h1>My Text in blockchain</h1>
     <h2>{text}</h2>
-    <a href="/">Back to Home</a>
+    <a href={`https://testnet.algoscan.app/tx/${transId.transID}`}>View at algo scan</a>
     <h2></h2>
     </div>
   );
