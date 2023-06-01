@@ -12,12 +12,11 @@ export const ALGOkey = '';
 //this is the url that the client will communicate with
 export const ALGOD_TESTNET_URL = 'https://testnet-api.algonode.cloud';
 export const ALGOD_PORT = '';
-
 //here, indexerServer use algorand node's indexer API, which provides advanced query capabilities on the blockchain data
 const indexerServer = "https://testnet-idx.algonode.cloud";
-
-
+//token for indexerClient
 const token = '';
+
 //indexerClient is used here because of the need for advanced querying data from the algorand blockchain
 export const indexerClient = new algosdk.Indexer(token, indexerServer, '');
 

@@ -7,7 +7,7 @@ function MyRouter() {
       <>
         <Routes>
             <Route exact path="/" element={<Form />} />
-            <Route path="display/:transID" exact element={<Display />} />
+            <Route path="display" exact element={<Display />} />
         </Routes>
       </>
     )
