@@ -27,7 +27,7 @@ function DataCRUD() {
 
     //function used to update the data
     const updateUser = async (id, age) => { //update step 2
-        const userDoc = doc(db, "users", "anotherCollection", "usersCollection", id);
+        const userDoc = doc(db, "users", id);
         const newFields = { age: age + 1 };
         await updateDoc(userDoc, newFields);
         setReload(reload + 1);
@@ -35,7 +35,7 @@ function DataCRUD() {
 
     //function to delete user
     const deleteUser = async (id) => { //delete step 2
-        const userDoc = doc(db, "users", "anotherCollection", "usersCollection", id);
+        const userDoc = doc(db, "users", id);
         await deleteDoc(userDoc);
         setReload(reload + 1);
     } //delete 2 end
@@ -75,15 +75,13 @@ function DataCRUD() {
                         <button
                             onClick={() => {
                                 updateUser(user.id, user.age)//update step 3
-                            }}
-                        >
+                            }}>
                             Increase Age
                         </button>
                         <button
                             onClick={() => {
                                 deleteUser(user.id);//delete step 3
-                            }}
-                        >
+                            }}>
                             Delete User
                         </button>
                     </div>

@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import { PeraWalletConnect } from "@perawallet/connect";
 import { useState} from 'react';
 import MyRouter from './router';
-import DataCRUD from './view/Firestore';
+import DataCRUD from './view/FirestoreCRUD';
+import ImageUpload from './view/Storage';
 function App() {
   const [account, setAccount] = useState(null);
   //connect dengan algo wallet utk dapatkan account user 
@@ -40,6 +41,8 @@ function App() {
         <br></br>
         <br></br>
         <br></br>
+        <DataCRUD />
+        <ImageUpload />
       </header>}
     </div>
   

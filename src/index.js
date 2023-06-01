@@ -5,9 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MyRouter from './router';
 import { BrowserRouter as Router } from 'react-router-dom';
-import DataCRUD from './view/Firestore';
+import DataCRUD from './view/FirestoreCRUD';
 import CropImage from './view/Storage';
-import ImageUpload from './view/Storage';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,8 +15,7 @@ root.render(
   <React.StrictMode>
       <Router>
     <App />
-      <DataCRUD />
-      <ImageUpload/>
+
     </Router>
   </React.StrictMode>
 

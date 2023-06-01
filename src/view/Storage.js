@@ -28,6 +28,7 @@ function ImageUpload() {
     useEffect(() => {
         listAll(imageListRef).then((response) => {
             response.items.forEach((item) => {
+                //get the image url link to display the image
                 getDownloadURL(item).then((url) => {
                     setImageList((prev) => [...prev, url]);
                 });
