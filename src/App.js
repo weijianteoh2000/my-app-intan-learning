@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import { PeraWalletConnect } from "@perawallet/connect";
 import { useState} from 'react';
 import MyRouter from './router';
+import DataCRUD from './view/Firestore';
 function App() {
   const [account, setAccount] = useState(null);
   //connect dengan algo wallet utk dapatkan account user 
@@ -36,6 +37,9 @@ function App() {
         >
           Learn React
         </a>
+        <br></br>
+        <br></br>
+        <br></br>
       </header>}
     </div>
   
